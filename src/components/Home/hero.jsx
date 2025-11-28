@@ -1,4 +1,4 @@
-const Hero = () => {
+const Hero = ({ onRegisterClick }) => {
   return (
     <section
       class="relative py-20 md:py-32 h-screen flex items-center justify-center"
@@ -24,12 +24,17 @@ const Hero = () => {
             your purpose and connect with a vibrant community.
           </h2>
           <div class="flex flex-wrap gap-4 justify-center mt-6">
-            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-zinc text-base font-bold leading-normal tracking-wide transform hover:scale-105 transition-transform">
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-zinc text-base font-bold leading-normal tracking-wide transform hover:scale-105 transition-transform"
+              onClick={onRegisterClick}
+            >
               <span class="truncate">Register Now</span>
             </button>
 
             <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-transparent border-2 border-zinc-200 text-zinc-200 text-base font-bold leading-normal tracking-wide hover:bg-zinc-200 hover:text-yellow-200 hover:border-yellow-200 transition-colors">
-              <span class="truncate">Learn More</span>
+              <a href="#about" class="truncate">
+                Learn More
+              </a>
             </button>
           </div>
         </div>

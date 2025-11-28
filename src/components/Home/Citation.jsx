@@ -1,4 +1,4 @@
-const Citation = () => {
+const Citation = ({ onRegisterClick }) => {
   return (
     <section class="py-20 md:py-28 bg-white " id="about">
       <div class="container mx-auto px-4">
@@ -23,7 +23,10 @@ const Citation = () => {
             international contexts. Join us on this transformative journey as we
             answer the call to love, serve, and transform lives across the globe
           </p>
-          <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-zinc text-base font-bold leading-normal tracking-wide mx-auto transform hover:scale-105 transition-transform">
+          <button
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-zinc text-base font-bold leading-normal tracking-wide mx-auto transform hover:scale-105 transition-transform"
+            onClick={onRegisterClick}
+          >
             <span class="truncate">Register Now</span>
           </button>
         </div>

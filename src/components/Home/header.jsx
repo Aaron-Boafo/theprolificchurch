@@ -33,7 +33,7 @@ const RenderTabs = ({ to, label, styles, isActive = false, onClick }) => {
   );
 };
 
-const Header = () => {
+const Header = ({ onRegisterClick }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -82,6 +82,7 @@ const Header = () => {
                 class={clsx(
                   "flex gap-2 text-white min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary font-bold leading-normal tracking-wide text-sm transform hover:scale-105 transition-transform"
                 )}
+                onClick={onRegisterClick}
               >
                 <span>
                   <ListCheck size={25} />
@@ -148,7 +149,10 @@ const Header = () => {
                 class={clsx(
                   "w-full flex gap-2 text-white cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary font-bold leading-normal tracking-wide text-sm transform hover:scale-105 transition-transform"
                 )}
-                onClick={closeMobileMenu}
+                onClick={() => {
+                  closeMobileMenu();
+                  onRegisterClick();
+                }}
               >
                 <span>
                   <ListCheck size={20} />
