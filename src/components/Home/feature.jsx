@@ -1,18 +1,18 @@
 const GuestData = [
   {
-    url: "/public/pastor.jpg",
+    url: "/pastor.jpg",
     name: "Pastor Eugene Addo",
     title: "Pastor of the Prolific Church",
     bio: "The set-man of the Productive Church, popularly known as the Prolific Church. He is a prolific pastor with deep apostolic teachings. His divine calling has been officially affirmed by his father in the faith, Apostle Elorm John Tete, a revered spiritual head of Psalmist International. This spiritual lineage lends credibility and continuity to the ministry's apostolic mandate.",
   },
   {
-    url: "/public/pastor2.jpg",
+    url: "/pastor2.jpg",
     name: "Shepherd Gideon Katibor",
     title: "Shepherd",
     bio: "The leader and founder of THE JESUS REVIVAL MINISTRY. He is a Prophet and Apostolic teacher whose divine calling has been officially affirmed by Prophet Joshua Tetteh, a revered spiritual father and recognized successor to Apostle Peter Newman Anim",
   },
   {
-    url: "/public/pastor3.jpg",
+    url: "/pastor3.jpg",
     name: "Christopher Yaw-Annor (Nabiy)",
     title: "Minister",
     bio: "A prophetic psalmist under the ministry of his father in the faith, Apostle Elorm J. Tete.",
