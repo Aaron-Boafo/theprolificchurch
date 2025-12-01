@@ -1,7 +1,7 @@
 const Hero = ({ onRegisterClick }) => {
   return (
     <section
-      class="relative py-20 md:py-32 h-screen flex items-center justify-center"
+      class="relative py-20 md:py-32 h-screen flex items-center  justify-center"
       id="home"
     >
       <div class="absolute inset-0 bg-cover bg-center">
@@ -12,7 +12,7 @@ const Hero = ({ onRegisterClick }) => {
         />
       </div>
 
-      <div class="absolute inset-0 bg-zinc/70" />
+      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[1.5px] " />
 
       <div class="container mx-auto px-4 relative text-white/80">
         <div class="flex flex-col gap-6 text-center max-w-3xl mx-auto">

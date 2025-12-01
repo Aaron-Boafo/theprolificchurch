@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
+import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
 
 const ThemeAlert = ({ targetDate, programName, handleClose }) => {
@@ -11,11 +12,17 @@ const ThemeAlert = ({ targetDate, programName, handleClose }) => {
   });
   const [visible, setVisible] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const now = new Date();
+  const navigate = useNavigate();
 
   // Fix hydration issues by only rendering after component is mounted
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleRegister = () => {
+    navigate("https://forms.gle/vLgqaxHyu7t9odYF6");
+  };
 
   useEffect(() => {
     if (!mounted) return;
@@ -81,10 +88,16 @@ const ThemeAlert = ({ targetDate, programName, handleClose }) => {
           </h2>
 
           <p className="mt-2 text-sm text-slate-600 ">
-            Registration will be open until{" "}
-            <span className="font-semibold text-primary">
-              {dayjs(targetDate).format("MMMM D, YYYY [at] h:mm A")}
-            </span>
+            {now > targetDate ? (
+              "Registration is Open Now"
+            ) : (
+              <>
+                Registration will be open until{" "}
+                <span className="font-semibold text-primary">
+                  {dayjs(targetDate).format("MMMM D, YYYY [at] h:mm A")}
+                </span>
+              </>
+            )}
           </p>
 
           <div className="mt-6 flex justify-center gap-3">
@@ -115,23 +128,14 @@ const ThemeAlert = ({ targetDate, programName, handleClose }) => {
           </div>
 
           {/* Buttons */}
-          {/* <div className="mt-6 flex gap-4 justify-center">
+          <div className="mt-6 flex gap-4 justify-center">
             <button
-              onClick={() => {
-                // Replace with actual registration action
-                console.log("Navigate to registration");
-              }}
-              className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium"
+              onClick={handleRegister}
+              className="px-6 py-2 w-full bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium"
             >
               Register Now
             </button>
-            <button
-              onClick={() => setVisible(false)}
-              className="px-6 py-2 bg-slate-200  text-slate-800  rounded-md hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors font-medium"
-            >
-              Remind Me Later
-            </button>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
